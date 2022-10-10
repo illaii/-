@@ -1,0 +1,18 @@
+https://www.codewars.com/kata/583710ccaa6717322c000105/train/php
+
+Это ката об умножении заданного числа на восемь, если оно четное, и на девять в противном случае.
+
+
+
+
+function simpleMultiplication($number) {
+  // your code goes here
+  $number = 10;
+  if ($number % 2 == 0){
+    $k = $number * 8;
+    echo $k;
+  }else{
+    $k = $number * 9;
+    echo $k;
+  }
+}
