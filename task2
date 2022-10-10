@@ -29,7 +29,7 @@ function solution($number){
            
     }
   }
-  var_dump($result1);
-  echo $sum;
+  //var_dump($result1);
+  return $sum;
  }
 }
