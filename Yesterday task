@@ -1,0 +1,43 @@
+Ссылка: https://www.codewars.com/kata/52742f58faf5485cae000b9a/solutions/php?filter=me&sort=best_practice&invalids=false
+
+
+
+function format_duration($time) {
+ //$time = 0;
+    
+  
+  if ($time > 0){
+  $years = intval($time / 365 / 24 / 60 / 60);
+  $days = intval($time / 24 / 60 / 60) % 365;
+  $hours = intval($time / 60 / 60) % 24;
+  $minutes = intval($time / 60) % 60;
+  $seconds = $time % 60;
+  
+   $data = [
+     'year' => $years,
+     'day' => $days,
+     'hour' => $hours,
+     'minute' => $minutes,
+     'second' => $seconds, 
+ ];
+
+ $strings = [];
+ foreach ($data as $k => $v) {
+     if ($v) {
+        $s = $v > 1 ? "s" : "";
+        $strings[] = "{$v} {$k}{$s}";
+     }
+ }  
+ $msg = implode(', ', $strings);
+ $lastCommaPos = mb_strrpos($msg, ',');
+ if ($lastCommaPos !== false) {
+     $msg = substr_replace($msg, " and", $lastCommaPos, 1);
+ }
+
+ return $msg;
+ 
+   }else{
+    return "now";
+  }
+}
+
